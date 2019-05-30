@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class OrderSummaryComparator {
 
-    public Comparator<OrderSummary.Summary> order(OrderType orderType) {
+    public Comparator<OrderSummary.Summary> order(final OrderType orderType) {
         return (o1, o2) -> orderType == OrderType.BUY ? descendingPriceOrder(o1, o2) : ascendingPriceOrder(o1, o2);
     }
 

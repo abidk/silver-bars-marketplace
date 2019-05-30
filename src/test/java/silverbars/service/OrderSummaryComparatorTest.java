@@ -19,7 +19,7 @@ class OrderSummaryComparatorTest {
     private List<Summary> results;
 
     @Test
-    public void givenSummaryForSellOrdersShouldReturnSummaryInExpectedOrder() {
+    public void givenSummaryForSellOrdersShouldReturnSummaryInAscendingOrder() {
         givenOrderType(OrderType.SELL);
         Summary summary1 = givenSummary(Quantity.of("100"), Price.of("1"));
         Summary summary2 = givenSummary(Quantity.of("200"), Price.of("3"));
@@ -36,7 +36,7 @@ class OrderSummaryComparatorTest {
     }
 
     @Test
-    public void givenSummaryForBuyOrdersShouldReturnSummaryInExpectedOrder() {
+    public void givenSummaryForBuyOrdersShouldReturnSummaryInDescendingOrder() {
         givenOrderType(OrderType.BUY);
         Summary summary1 = givenSummary(Quantity.of("100"), Price.of("1"));
         Summary summary2 = givenSummary(Quantity.of("200"), Price.of("3"));
@@ -53,7 +53,7 @@ class OrderSummaryComparatorTest {
     }
 
     private void thenSummaryHasSize(int expectedSize) {
-        assertEquals(expectedSize, results.stream().count());
+        assertEquals(expectedSize, results.size());
     }
 
     private void thenSummaryIsOrdered(int idx, Summary expectedSummary) {
