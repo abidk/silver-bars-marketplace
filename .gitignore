@@ -1,3 +1,22 @@
+# Eclipe
+.classpath
+.project
+.settings/
+
+# IDEA's files
+.idea
+*.iml
+
+#OS X
+.DS_Store
+
+# Gradle
+.gradle
+build/
+out/
+log/
+/bin/
+
 # Compiled class file
 *.class
 

@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id "com.adarshr.test-logger" version "1.6.0"
+}
+
+group 'silver-bars-marketplace'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+wrapper {
+    gradleVersion = '5.4.1'
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+test {
+    useJUnitPlatform()
+}
+
+testlogger {
+    theme 'standard'
+    showPassed false
+    showSkipped true
+    showFailed true
+    showSummary true
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:5.4.2",
+    )
+}
